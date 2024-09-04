@@ -1,0 +1,39 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+trigger:
+- Development
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'  # Specify Node.js version
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+  displayName: 'Install npm dependencies'
+
+- script: |
+    npm run build
+  displayName: 'Compile HTML/CSS'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)/dist'  # Directory containing your built files
+    includeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/output.zip'  # Name of the ZIP file
+    verbose: true
+  displayName: 'Create ZIP Package'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/output.zip'
+    artifactName: 'html-css-package'
+    publishLocation: 'pipeline'
+  displayName: 'Publish ZIP as Pipeline Artifact'
+

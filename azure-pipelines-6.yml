@@ -1,0 +1,60 @@
+trigger:
+- Development
+
+steps:
+# 1. Install Node.js
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+  displayName: 'Install Node.js'
+
+
+# 3. HTML syntax check using HTMLHint
+- script: |
+    echo "Running HTMLHint for HTML files:"
+    npx htmlhint "*.html" --config .htmlhintrc
+  displayName: 'HTML syntax check'
+
+# 4. CSS syntax check using Stylelint with inline configuration
+- script: |
+    echo '{
+      "rules": {
+        "block-no-empty": true,
+        "color-no-invalid-hex": true
+      }
+    }' > .stylelintrc.json
+    echo "Running Stylelint for CSS files:"
+    npx stylelint "**/*.css"
+  displayName: 'CSS Syntax Check'
+
+# 5. PHP syntax check using PHP linter
+- script: |
+    echo "Running PHP linter for PHP files:"
+    find . -name "*.php" -exec php -l {} \;
+  displayName: 'PHP syntax check'
+
+# 6. Package all files into a ZIP archive using Linux commands
+- script: |
+    echo "Creating artifact staging directory and packaging files:"
+    mkdir -p $(Build.ArtifactStagingDirectory)
+    cd $(Build.SourcesDirectory)
+    zip -r $(Build.ArtifactStagingDirectory)/output.zip . -x "*.git*"
+  displayName: 'Package All Files into ZIP'
+
+# 7. Publish the ZIP file as an artifact
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/output.zip'
+    artifactName: 'all-files-package'
+    publishLocation: 'pipeline'
+  displayName: 'Publish ZIP Artifact'
+
+  
+# 10. Deploy the ZIP file to Azure Web App
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'gamevaultwebapp'
+    appName: 'GameVault'
+    appType: 'webAppLinux'
+    package: '/home/vsts/work/1/a/output.zip' # Updated path to match the location of output.zip
+  displayName: 'Deploy GameVault'

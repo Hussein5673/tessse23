@@ -1,0 +1,33 @@
+trigger:
+- Development
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    ls -R
+  displayName: 'List files'
+
+- script: |
+    npx htmlhint "*.html" --config .htmlhintrc
+  displayName: 'HTML syntax check'
+
+- script: |
+    find . -name "*.php" -exec php -l {} \;
+  displayName: 'PHP syntax check'
+  condition: 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+

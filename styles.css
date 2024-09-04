@@ -1,0 +1,259 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }  
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+    .HomePage {
+    width: 100%;
+    height: 919px;
+    position: relative;
+    background-image: url('Backgrounds/HomePage-BackGround.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    }
+ 
+    .MenuButtons {
+      position: absolute;
+      left: 87px;
+      top: 234px;
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 10px; /* Space between buttons */
+  }
+  
+  .Menu {
+      width: 100px; /* Uniform width */
+      height: 40px; /* Uniform height */
+      background: transparent;
+      border-radius: 8px;
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      display: flex;
+  }
+  
+  .MenuItem {
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      font-family: Abel;
+      font-weight: 400;
+      line-height: 16px;
+      word-wrap: break-word;
+      text-align: center;
+  }
+  .Searchbox {
+    width: 537px;
+    padding: 8px 12px;
+    left: 1290px;
+    top: 27px;
+    position: absolute;
+    background: #F4F7FA;
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.Search {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Icon img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+}
+
+.SearchInput {
+    font-size: 16px;
+    font-family: Abel;
+    font-weight: 400;
+    line-height: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    flex-grow: 1; /* Allows the input to take up the remaining space */
+}
+/*   Sign in   */
+  
+.Signin {
+    width: 100%;
+    height: 1024px;
+    position: relative;
+    background-image: url('Signup&Signin icons_background/Signinbackground.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+  
+  .OverlaySignIn {
+    width: 539px;
+    height: 730px;
+    position: absolute;
+    top: 147px;
+    left: 690px;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+  }
+/*   Sign up   */
+
+.RightColumnSignup {
+    max-width: 50%;
+    flex: 1;
+    width: 50%;
+    height: 919px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    background-image: url('Signup&Signin icons_background/Home page.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    position: relative; /* Needed to position the overlay correctly */
+  }
+  /*  Subsription page  */
+  .NoorSSubscriptionPage {
+    width: 100%;
+  height: 1024px;
+  position: relative;
+  background-image: url('Backgrounds/suback.png'); /* Path to your image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+  /*   Friends page     */
+  .FriendsPageMichel{
+    width: 100%;
+    height: 919px;
+    position: relative;
+    background-image: url('Backgrounds/suback.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+  }
+
+  /*    Profile page     */
+  
+  .LindaSProfilePage{
+    width: 100%;
+    height: 2500px;
+    position: relative;
+    background-image: url('picturespfp/unsplash_SIhcZYEwMB0.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */ 
+  }
+  .profile_page_box {
+    width: 1000px;
+    height: 600px;
+    left: 400px;
+    top: 200px;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #08051E;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px; /* Added padding to create space inside the box */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5); /* Added a subtle shadow */
+    overflow: hidden; /* Prevents overflow of content */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+
+.User-item {
+    position: relative;
+    color: white;
+    font-size: 48px;
+    font-family: Pavanam, sans-serif;
+    font-weight: 400;
+    line-height: 56px;
+    word-wrap: break-word;
+    padding: 10px 20px; /* Added padding for better spacing */
+    margin-bottom: 20px; /* Added margin to separate items */
+    text-align: center; /* Center the text horizontally */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle underline to distinguish items */
+    letter-spacing: 1.5px; /* Increased letter spacing for better readability */
+}
+
+.User-item:last-child {
+    border-bottom: none; /* Removes border from the last item */
+}
+
+
+  .Menu_profile_page .MenuItem {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 10px;
+    padding-bottom: 16px;
+    position: relative;
+    background: #08051E;
+    border-radius: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    font-family: Pavanam, sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    word-wrap: break-word;
+}
+
+
+/*    Friends  page     */
+.Searchbox_Friendspage {
+  width: 537px;
+  padding: 8px 12px;
+  left: 1290px;
+  top: 27px;
+  position: absolute;
+  background: #F4F7FA;
+  border-radius: 8px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.Search {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Icon_Friends img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+}
+
+.SearchInput_Friends {
+  font-size: 16px;
+  font-family: Abel;
+  font-weight: 400;
+  line-height: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  flex-grow: 1; /* Allows the input to take up the remaining space */
+}
+ 
+

@@ -1,0 +1,163 @@
+body {
+    background-color: #0a1a29;
+    color: white;
+    margin: 0;
+    font-family: 'Abel', sans-serif;
+}
+
+.FriendsPageMichel {
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.middleScreen {
+    display: flex;
+}
+
+.GameVault {
+    font-size: 3vw;
+    font-family: 'Righteous', cursive;
+    margin-right: 100px;
+}
+
+.FriendsPage {
+    font-size: 2vw;
+    font-family: 'Abel', sans-serif;
+    text-align: center;
+    margin-top: 10px;
+    flex: 1;
+}
+
+.UserName {
+    font-size: 2.5vw;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.OnlineStatus {
+    font-size: 1.5vw;
+    color: lightgreen;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.OnlineStatus .dot {
+    height: 12px;
+    width: 12px;
+    background-color: lightgreen;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.Frame379 {
+    width: 35%;
+    height: calc(100% - 310px);
+    background: rgba(21, 69, 94, 0.44);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.YourFriends {
+    font-size: 2.5vw;
+    font-family: 'Abel', sans-serif;
+    margin-bottom: 15px;
+}
+
+.Frame379 ul {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.Frame379 ul li {
+    margin-bottom: 10px;
+}
+
+.Frame379 ul li button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Abel', sans-serif;
+    cursor: pointer;
+}
+
+.Frame379 .SearchResults {
+    display: inline-block;
+}
+
+.SearchResults {
+    width: 50%;
+    height: calc(100vh - 310px);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.SearchResults div {
+    color: black;
+    font-family: 'Abel', sans-serif;
+    font-size: 2vw;
+    margin-bottom: 20px;
+}
+
+.Searchbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 210px;
+    margin-bottom: 20px;
+}
+
+.SearchInput {
+    padding: 0 10px;
+    margin-left: 20px;
+    border: None;
+    font-size: 1.2vw;
+    box-sizing: border-box;
+}
+
+.Icon img {
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+}
+
+.Search button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #15455e;
+    color: white;
+    font-size: 1.2vw;
+    cursor: pointer;
+}
+
+.Search button:hover {
+    background-color: #0a1a29;
+}
